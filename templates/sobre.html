@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/menu.css" >
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+    *{
+        font-size: 15px;
+        font-family: 'Righteous', cursive;
+    }
+    body{
+        background-color: #333;
+        color: #eee;
+    }
+    .titleSobre{
+        padding-top: 20px;
+        padding: 15px;
+        font-size: 22px;
+    }
+
+    .textSobre{
+        text-align: justify;
+        text-indent: 2em;
+    }
+
+    .imgSobre{
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+
+<div class="container">
+    <div class="row">   
+        <div class="col-md-12 text-center">
+            <img src="../static/img/logo2.png" class="imgSobre">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center titleSobre">
+            <h2>Firewall Appliance para Raspberry PI</h2>
+            <h4>COM241 - Administração e Gerência de Redes de Computadores</h4>
+            <h4>Universidade Federal de Itajubá - 2018</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <p class="textSobre">O trabalho se baseia em criar um firewall que permita com que o usuário possa gerenciar o acesso das interfaces na rede. O sistema é basicamente composto pela união de um roteador, um Raspberry Pi, um ponto de acesso e as interfaces que estarão conectadas à rede naquele momento. Os três primeiros componentes estarão interligados por um cabo de rede Ethernet, por onde os dados serão trafegados e todas interfaces poderão se conectar, via Wi-fi, ao ponto de acesso.</p>
+            <p class="textSobre">O Raspberry Pi, como uma appliance, tem o objetivo de hospedar a aplicação gerenciadora do acesso à rede, a qual recebe todos os pacotes e os libera ou bloqueia ao ponto de acesso após o processamento dos filtros configurados. A aplicação é um software desenvolvido em Python, Ruby e Shell script que utiliza um banco de dados MySQL para receber tais configurações armazenadas e atualizadas da rede.</p>
+        </div>
+        <div class="col-md-5">
+            <p class="textSobre"> As interfaces conectadas ao ponto de acesso têm a opção de utilizar uma aplicação Web, desenvolvida em Python, HTML, CSS e JS, para configurar as informações presentes no banco de dados.</p>
+            <p class="textSobre"> Realizado por:<ul> <li>André Vitor Beraldo</li> <li>Felipe dos Santos</li> <li>Halyson Vinicius de Morais</li> <li>José Luiz Corrêa</li></ul></p>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

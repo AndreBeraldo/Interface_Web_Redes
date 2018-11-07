@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}" />
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+
+  
+  <div style="position: absolute; margin-top: 0;" class="left">
+    <div class="item active">
+      <a href="{{ url_for('sobre') }}" target="iframe" > <i class="fas fa-fw fa-home"></i>A Appliance</a>
+    </div>
+    <div class="item">
+      <a href="{{ url_for('getIpLink') }}" target="iframe"> <i class="fas fa-fw fa-columns"></i>Bloqueio de Links e IP's</a>
+    </div>
+    <div class="item">
+      <a href="{{ url_for('getValidarIpPaises') }}" target="iframe"> <i class="fas fa-fw fa-globe"></i>Bloqueio de Países</a>
+    </div>
+    <div class="item">
+      <a href="index.html" target="iframe"> <i class="fas fa-fw fa-user-circle"></i>Configurações</a>
+    </div>
+  </div>
+  <div class="container">
+    <iframe name="iframe" frameborder="0" width="111.5%" height="625px"></iframe>
+  </div>
+  <footer>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6">
+          Infusor - Interface Web - Universidade Federal de Itajubá
+        </div> 
+        <div class="col-md-6">
+         <span id="ip"></span> 
+       </div>
+
+
+     </div>
+   </div>
+
+
+
+
+ </footer>
+
+ <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

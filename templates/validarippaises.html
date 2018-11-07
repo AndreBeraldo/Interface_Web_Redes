@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="../css/menu.css" >
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<style>
+	*{
+		font-size: 14px;
+		font-family: 'Righteous', cursive;
+	}
+	body{
+		background-color: #333;
+		color: #eee;
+	}
+
+</style>
+<div class="container">
+	<div class="row">
+		<p><h2> LIBERAR E BLOQUEAR PAÍSES</h2></p>
+	</div>
+	<div class="row">
+		<p>Clique no botão desejado para alterar a configuração ou libere/bloqueie todos abaixo.</p>
+	</div>
+	<div class="row">
+		<form method="post" action="{{ url_for('liberarBloquearTodos', tipo=0) }}">
+			<input type="submit" class="btn btn-success" value="Liberar Todos">
+		</form>
+		<form method="post" action="{{ url_for('liberarBloquearTodos', tipo=1) }}">
+			<input type="submit" class="btn btn-danger" value="Bloquear Todos">
+		</form>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">PAÍS</th>
+					<th scope="col">STATUS</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in listaValidarPaises %}
+				<tr>
+					<td>{{row.1}}</td>
+					<td>
+						{% if row.2 == 1 %}
+						<form method="post" action="{{ url_for('validarPais', id=row.0, tipo=row.2) }}">
+							<input type="submit" class="btn btn-danger" value="Bloqueado">
+						</form>
+						{% else %}
+						<form method="post" action="{{ url_for('validarPais', id=row.0, tipo=row.2) }}">
+							<input type="submit" class="btn btn-success" value="Liberado">
+						</form>
+						{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+	{%with messages = get_flashed_messages()%}
+	{%if messages%}
+	{% for message in messages %}
+	<div class="alert alert-success alert-dismissable" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label ="close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		{{message}}
+	</div>
+	{%endfor%}
+	{%endif%}
+	{%endwith%}
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
